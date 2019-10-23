@@ -1,0 +1,19 @@
+<div class="card-columns m-5 animated fadeIn">
+    <div class="card puntero" (click)="verArtista(item)" *ngFor="let item of items">
+        <img [src]="item.images | noimage" class="card-img-top" [alt]="item.name">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">
+                <span class="badge badge-pill badge-primary" *ngFor="let artista of item.artists">
+                    {{ artista.name }}
+                </span>
+                <span class="badge badge-pill badge-warning" *ngIf="item.total_tracks">
+                    {{ item.total_tracks }} canciones
+                </span>
+                <span class="badge badge-pill badge-success" *ngIf="item.release_date"> 
+                    {{ item.release_date | date:'y'}}
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
