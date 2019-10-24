@@ -63,3 +63,7 @@ hr {
 .fadeIn {
     animation-name: fadeIn;
 }
+
+.table {
+    color: white !important;
+}
